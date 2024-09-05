@@ -58,11 +58,11 @@ class Book{
         var descr: String{
             switch self{
             case .onShelf:
-                "On Shelf"
+                "Na Estante"
             case .inProgress:
-                "In Progress"
+                "Em Processo"
             case .completed:
-                "Completed"
+                "Completado"
             }
         }
     }

@@ -36,20 +36,20 @@ struct EditBookView: View {
                 LabeledContent{
                     DatePicker(" ", selection: $dateAdded, displayedComponents: .date)
                 }label:{
-                    Text("Date Added")
+                    Text("Livro Cadastrado")
                 }
                 if status == .inProgress || status == .completed{
                     LabeledContent{
                         DatePicker("", selection: $dateStarted, in: dateAdded..., displayedComponents: .date)
                     }label:{
-                        Text("Date Started")
+                        Text("Inicio da Leitura")
                     }
                 }
                 if status == .completed{
                     LabeledContent{
                         DatePicker("", selection: $dateCompleted, in: dateStarted..., displayedComponents: .date)
                     }label:{
-                        Text("Date Completed")
+                        Text("Leitura Concluida")
                     }
                 }
             }
@@ -81,16 +81,16 @@ struct EditBookView: View {
             LabeledContent{
                 TextField("", text: $title)
             }label:{
-                Text("Title").foregroundStyle(.secondary)
+                Text("Titulo").foregroundStyle(.secondary)
             }
             
             LabeledContent{
                 TextField("", text: $author)
             }label:{
-                Text("Author").foregroundStyle(.secondary)
+                Text("Autor").foregroundStyle(.secondary)
             }
             Divider()
-            Text("Sumary").foregroundStyle(.secondary)
+            Text("Sumário").foregroundStyle(.secondary)
             TextEditor(text: $summary)
               .padding(5)
               .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
@@ -101,7 +101,7 @@ struct EditBookView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
             if changed{
-                Button("Upadate"){
+                Button("Atualizar"){
                     book.status = status
                     book.rating = rating
                     book.title = title

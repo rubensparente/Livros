@@ -15,9 +15,9 @@ struct NewBookView: View{
     var body: some View{
         NavigationStack{
             Form{
-                TextField("Book Title", text: $title)
-                TextField("Author", text: $author)
-                Button("Create"){
+                TextField("Titulo do Livro", text: $title)
+                TextField("Autor", text: $author)
+                Button("Salvar"){
                     let newBook = Book(title: title, author: author)
                     context.insert(newBook)
                     dismiss()
@@ -26,11 +26,11 @@ struct NewBookView: View{
                .buttonStyle(.borderedProminent)
                 .padding(.vertical)
                 .disabled(title.isEmpty || author.isEmpty)
-                .navigationTitle("New Book")
+                .navigationTitle("Novo Livro")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar{
                     ToolbarItem(placement: .topBarLeading){
-                        Button("Cancel"){
+                        Button("Cancelar"){
                             dismiss
                         }
                     }
