@@ -11,8 +11,6 @@ struct EditBookView: View {
     @Environment(\.dismiss) private var dismiss
     let book: Book
     
-    @StateObject private var bookManagerJson = BookManagerJson()
-    
     @State private var status = Status.onShelf
     @State private var rating: Int?
     @State private var title = ""
